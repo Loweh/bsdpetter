@@ -7,8 +7,8 @@
 typedef struct ll_node ll_node;
 
 struct ll_node {
-	char value[10];
-	struct ll_node *next;
+    char value[10];
+    struct ll_node *next;
 };
 
 void ll_create_head(ll_node **head, char value[10]);
