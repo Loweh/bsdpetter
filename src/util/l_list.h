@@ -2,9 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-/*!!!!!!!!!!!!!!!!!!!!!!!
-LL STANDS FOR LINKED LIST
-!!!!!!!!!!!!!!!!!!!!!!!*/
+//ll stands for linked list
 
 typedef struct ll_node ll_node;
 
