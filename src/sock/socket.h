@@ -7,9 +7,9 @@
 #include <netdb.h>
 #include "../util/l_list.h"
 
-#define SK_PORT 2127
-
 //sk is for socket.
+
+#define SK_PORT 2127
 
 typedef struct {
     struct sockaddr_in server;
