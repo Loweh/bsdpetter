@@ -5,6 +5,7 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <netdb.h>
+#include <fcntl.h>
 #include "../util/l_list.h"
 
 //sk is for socket.
@@ -13,16 +14,19 @@
 
 typedef struct {
     struct sockaddr_in server;
-    int sock, id;
+    int sock, id, alive;
 } sk_client;
 
 typedef struct {
     ll_node *clients;
-    //struct addrinfo hints;
-    int sock, last_val;
+    struct sockaddr_in info;
+    int sock, alive;
 } sk_server;
 
-int sk_create_server(sk_server *server, char *port);
+int sk_create_server(sk_server *server);
 int sk_create_client(sk_client *client, char* ip);
+
+int sk_remove_server(sk_server *server);
+int sk_remove_client(sk_client *client);
 
 #endif
