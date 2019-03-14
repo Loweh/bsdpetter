@@ -68,8 +68,9 @@ int sk_remove_client(sk_client *client) { //Figure out why freeing client makes 
     return 0;
 };
 
-int sk_remove_server(sk_server *server) { //Add the function to remove the entire list when you make that.
+int sk_remove_server(sk_server *server) { //Maybe servers should be dynamically allocated?
     close(server->sock);
+    ll_remove_list(&(server->clients));
     
     return 0;
 };
