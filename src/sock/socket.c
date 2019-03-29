@@ -62,15 +62,15 @@ int sk_create_client(sk_client *client, char *ip) { //Figure out how to make you
     return 0;
 };
 
-int sk_remove_client(sk_client *client) { //Figure out why freeing client makes the program angry.
-    close(client->sock);
+int sk_remove_server(sk_server *server) { //Maybe servers should be dynamically allocated?
+    close(server->sock);
+    ll_remove_list(&(server->clients));
     
     return 0;
 };
 
-int sk_remove_server(sk_server *server) { //Maybe servers should be dynamically allocated?
-    close(server->sock);
-    ll_remove_list(&(server->clients));
+int sk_remove_client(sk_client *client) { //Figure out why freeing client makes the program angry.
+    close(client->sock);
     
     return 0;
 };
